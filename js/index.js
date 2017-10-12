@@ -7,6 +7,8 @@ var intervalId;
 
 var sessionOrBreak = "Session" ; 
 
+var playPromise;
+
 
 var calcTimeLeftInSecs = () => (sessionOrBreak == "Session") ? timeLeft = currSessionLength * 60 : timeLeft = currBreakLength * 60 ;
 
@@ -55,6 +57,23 @@ var countDown = () => {
     
     if (timeLeft <= 0 ) {
 
+        var aid = document.getElementById("beep");
+
+        playPromise = aid.play();
+
+        if (playPromise !== undefined) {
+
+            playPromise.then(_ => {
+              // Automatic playback started!
+              // Show playing UI.
+            })
+
+            .catch(error => {
+              console.log("oops in aid.play()")
+              // Auto-play was prevented
+              // Show paused UI.
+            });
+        }
               
         stopTimer();
 
@@ -74,10 +93,6 @@ var countDown = () => {
 
 
 };
-
-
-
-
 
 
 window.addEventListener("load", event => {
@@ -108,7 +123,27 @@ window.addEventListener("load", event => {
 
     elReset.addEventListener("click", () => { 
         
-  
+        var aid = document.getElementById("beep");
+
+        if (playPromise !== undefined) {
+
+            playPromise.then(_ => {
+                // Automatic playback started!
+                // Show playing UI.
+                // We can now safely pause video...
+                aid.pause();
+             })
+             
+            .catch(error => {
+                console.log("oops in aid.pause()")
+                // Auto-play was prevented
+                // Show paused UI.
+            });
+        }
+
+
+        aid.pause();
+        aid.currentTime = 0;
         stopTimer();
         setInnerText('break-length', currBreakLength = 5 ) ;
         setInnerText('session-length', currSessionLength = 25 ) ;  
