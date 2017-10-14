@@ -20,3 +20,20 @@ a {
     text-decoration: none;
 
 }
+
+#pomodoro{
+    max-width:1000px;
+    margin:auto;
+}
+
+#break-decrement > h1{
+
+    width:21.03px;
+
+}
+
+#session-decrement > h1{
+    
+        width:21.03px;
+    
+    }

@@ -10,6 +10,8 @@
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <link rel="stylesheet" href="css/style.css">  
 
     </head>
@@ -17,32 +19,61 @@
 
     <body>
 
-        <label id="break-label">Break Length
 
-            <button id="break-decrement">-</button>
+    <div id="pomodoro" class="w3-container w3-xlarge w3-sand w3-card">
 
-            <output id="break-length"></output>
+        <h1 class="w3-center  w3-text-blue-gray">FCC Pomodoro Clock</h1>
 
-            <button id="break-increment">+</button>
+        <div id="break-session" class="w3-row-padding w3-panel">
 
-        </label>
+            <div id ="break" class="w3-cell w3-half w3-padding w3-center">
+                
+                <label id="break-label">Break Length</label>
+
+                <div id="break-buttons">
+
+                    <a id="break-decrement" class="w3-round-xxlarge w3-btn w3-pale-red">
+                        <h1>-</h1>
+                    </a>
+                    
+                    <output id="break-length"></output>
+                    
+                    <a id="break-increment" class="w3-round-xxlarge w3-btn w3-pale-red">
+                        <h1>+</h1>
+                    </a>  
+                
+                </div>
+
+            </div>
 
 
-        <label id="session-label">Session Length
 
-            <button id="session-decrement">-</button>
-            
-            <output id="session-length"></output>
+            <div id="session" class="w3-cell w3-half w3-padding w3-center">
 
-            <button id="session-increment">+</button>
+                <label id="session-label">Session Length</label>
+                
+                <div id="session-buttons">
 
-        </label>
+                    <a id="session-decrement" class="w3-round-xxlarge w3-btn w3-pale-red">
+                        <h1>-</h1>
+                    </a>
+                    
+                    <output id="session-length"></output>
 
+                    <a id="session-increment" class="w3-round-xxlarge w3-btn w3-pale-red">
+                        <h1>+</h1>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
         
 
-        <div id="running-session">
+        <div id="running-session" class="w3-panel  w3-center ">
 
-            <a id="start_stop" href="#">
+            <a id="start_stop" href="#" class="w3-btn w3-blue-gray">
 
                 <label id="timer-label"></label>
 
@@ -50,14 +81,16 @@
 
             </a>
 
-
-            <div>
-
-              <a id="reset" href="#">Reset</a>
-
-            <div>
-        
         </div>
+
+        <div class="w3-panel w3-center w3-padding-24">
+
+            <a id="reset" href="#"><i class="fa fa-refresh fa-3x w3-btn w3-circle" aria-hidden="true"></i></a>
+
+        <div>
+        
+        
+       
 
         <audio id="beep" preload="auto">
             <source src = "http://www.orangefreesounds.com/wp-content/uploads/2015/06/Beep-mp3.mp3 ">
@@ -66,8 +99,10 @@
 
         <script src="js/index.js"></script>
 
-        <script src='https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js'></script>
+        <!-- <script src='https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js'></script> -->
         
+
+        </div>
     </body>
     
 </html>
